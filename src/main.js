@@ -58,6 +58,13 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenu();
 });
 
+const markHeaderStuck = () => {
+  header.classList.toggle("is-stuck", window.scrollY > 12);
+};
+
+markHeaderStuck();
+window.addEventListener("scroll", markHeaderStuck, { passive: true });
+
 const countdown = document.querySelector(".countdown-timer");
 
 if (countdown) {
@@ -88,3 +95,11 @@ if (countdown) {
   tick();
   window.setInterval(tick, 1000);
 }
+
+document.querySelectorAll(".track-trigger").forEach((button) => {
+  button.addEventListener("click", () => {
+    const item = button.closest(".track-item");
+    const open = item.classList.toggle("is-open");
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+});
