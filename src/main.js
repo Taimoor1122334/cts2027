@@ -65,6 +65,27 @@ const markHeaderStuck = () => {
 markHeaderStuck();
 window.addEventListener("scroll", markHeaderStuck, { passive: true });
 
+const motionItems = document.querySelectorAll(".rise, .rise-img");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  motionItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const motionObserver = new IntersectionObserver(
+    (entries) => {
+      const entering = entries.filter((entry) => entry.isIntersecting);
+      entering.forEach((entry, index) => {
+        entry.target.style.setProperty("--rise-delay", `${Math.min(index, 5) * 80}ms`);
+        entry.target.classList.add("is-visible");
+        motionObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  motionItems.forEach((item) => motionObserver.observe(item));
+}
+
 const countdown = document.querySelector(".countdown-timer");
 
 if (countdown) {
