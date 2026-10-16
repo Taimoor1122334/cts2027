@@ -32,8 +32,10 @@ toggle.addEventListener("click", () => {
 });
 
 document.querySelectorAll(".has-dropdown > .nav-link").forEach((trigger) => {
-  trigger.addEventListener("click", () => {
+  trigger.addEventListener("click", (event) => {
     if (desktopQuery.matches) return;
+
+    if (trigger.tagName === "A") event.preventDefault();
 
     const item = trigger.parentElement;
     const willOpen = !item.classList.contains("is-open");
