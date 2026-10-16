@@ -67,6 +67,12 @@ window.addEventListener("scroll", markHeaderStuck, { passive: true });
 
 const motionItems = document.querySelectorAll(".rise, .rise-img");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const heroVideo = document.querySelector(".hero-media video");
+
+if (heroVideo && reduceMotion) {
+  heroVideo.removeAttribute("autoplay");
+  heroVideo.pause();
+}
 
 if (reduceMotion || !("IntersectionObserver" in window)) {
   motionItems.forEach((item) => item.classList.add("is-visible"));
