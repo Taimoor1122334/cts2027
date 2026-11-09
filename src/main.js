@@ -52,6 +52,40 @@ desktopQuery.addEventListener("change", (event) => {
   if (event.matches) closeMenu();
 });
 
+const pageName = (pathname) => pathname.split("/").pop() || "index.html";
+
+const markNavCurrent = () => {
+  const page = pageName(location.pathname);
+  const hash = location.hash;
+
+  document.querySelectorAll(".main-nav .nav-link, .main-nav .dropdown-link").forEach((link) => {
+    link.removeAttribute("aria-current");
+  });
+
+  document.querySelectorAll(".main-nav a.nav-link, .main-nav a.dropdown-link").forEach((link) => {
+    const url = new URL(link.getAttribute("href"), location.href);
+    if (pageName(url.pathname) !== page) return;
+
+    if (link.classList.contains("dropdown-link")) {
+      if (url.hash && url.hash === hash) link.setAttribute("aria-current", "location");
+      return;
+    }
+
+    if (!url.hash) link.setAttribute("aria-current", "page");
+    else if (url.hash === hash) link.setAttribute("aria-current", "page");
+  });
+
+  const tracksButton = [...document.querySelectorAll(".has-dropdown > button.nav-link")].find((button) =>
+    button.textContent.includes("Tracks")
+  );
+  if (tracksButton && page === "index.html" && (hash === "#tracks" || hash.startsWith("#track-"))) {
+    tracksButton.setAttribute("aria-current", "page");
+  }
+};
+
+markNavCurrent();
+window.addEventListener("hashchange", markNavCurrent);
+
 document.addEventListener("click", (event) => {
   if (!header.contains(event.target)) closeMenu();
 });

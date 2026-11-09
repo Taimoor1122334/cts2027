@@ -1,4 +1,5 @@
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -167,6 +168,9 @@
 @layer utilities {
   .mt-15 {
     margin-top: calc(var(--spacing) * 15);
+  }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
 }
 .proxima-regular {
@@ -406,6 +410,12 @@
   }
   .nav-link:hover {
     opacity: 0.72;
+  }
+  .nav-link[aria-current="page"], .dropdown-link[aria-current="location"] {
+    color: var(--color-brand);
+  }
+  .dropdown-link[aria-current="location"] {
+    background: rgba(255, 106, 0, 0.14);
   }
   .chevron {
     width: 0.38rem;
@@ -666,6 +676,223 @@
   }
   .attend .btn {
     margin-top: 1.65rem;
+  }
+  .exhibit {
+    background: #1a1a1a;
+    padding-top: clamp(2.5rem, 4vw, 3.75rem);
+    padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
+  }
+  .exhibit .eyebrow {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+  }
+  .exhibit h2 {
+    margin-top: 0.85rem;
+    font-size: clamp(3.35rem, 5.6vw, 5.5rem);
+    line-height: 0.88;
+  }
+  .exhibit-intro {
+    margin-top: 1.35rem;
+    max-width: 78rem;
+  }
+  .exhibit-intro p {
+    font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+    line-height: 1.5;
+  }
+  .exhibit-intro p + p {
+    margin-top: 1.35rem;
+  }
+  .exhibit-intro + .btn {
+    margin-top: 1.65rem;
+  }
+  .exhibit-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2.25rem, 4.8vw, 4.75rem);
+    align-items: center;
+    margin-top: clamp(3.5rem, 6vw, 5.5rem);
+  }
+  .exhibit-copy h2 {
+    margin-top: 0;
+    font-size: clamp(3.15rem, 4.6vw, 4.75rem);
+  }
+  .exhibit-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.35rem;
+  }
+  .exhibit-list {
+    margin: 1.35rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .exhibit-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+    line-height: 1.35;
+  }
+  .exhibit-list li + li {
+    margin-top: 0.45rem;
+  }
+  .exhibit-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .exhibit-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.65rem;
+  }
+  .reach {
+    background: #1a1a1a;
+    padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
+  }
+  .reach-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2.25rem, 4.8vw, 4.75rem);
+    align-items: center;
+  }
+  .reach h2 {
+    margin-top: 0;
+    font-size: clamp(3.35rem, 5.6vw, 5.5rem);
+    line-height: 0.88;
+  }
+  .reach-copy p {
+    margin-top: 1.15rem;
+    font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+    line-height: 1.4;
+  }
+  .reach-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.35rem;
+  }
+  .venue {
+    background: #1a1a1a;
+    padding-top: clamp(2.5rem, 4vw, 3.75rem);
+    padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
+  }
+  .venue .eyebrow {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+  }
+  .venue h2 {
+    margin-top: 0.7rem;
+    font-size: clamp(3.15rem, 5.2vw, 5.15rem);
+    line-height: 0.9;
+  }
+  .venue-address {
+    margin-top: 0.85rem;
+    font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+    line-height: 1.4;
+  }
+  .venue-media {
+    margin-top: clamp(1.75rem, 3vw, 2.5rem);
+  }
+  .venue-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+  }
+  .booking {
+    background: #1a1a1a;
+    padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
+  }
+  .booking .eyebrow {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+  }
+  .booking h2 {
+    margin-top: 0.7rem;
+    font-size: clamp(2.85rem, 4.7vw, 4.65rem);
+    line-height: 0.9;
+  }
+  .booking-line {
+    display: block;
+  }
+  .booking p {
+    margin-top: 1.15rem;
+    max-width: 78rem;
+    font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+    line-height: 1.5;
+  }
+  .booking .btn {
+    margin-top: 1.5rem;
+  }
+  .booking-photos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem);
+    margin-top: clamp(2rem, 3.5vw, 2.75rem);
+  }
+  .booking-photos img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.35rem;
+  }
+  .nearby {
+    background: #1a1a1a;
+    padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
+  }
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+  .nearby .eyebrow {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+  }
+  .nearby h2 {
+    margin-top: 0.55rem;
+    font-size: clamp(3.15rem, 5.2vw, 5rem);
+    line-height: 0.9;
+  }
+  .nearby-address {
+    margin-top: 0.65rem;
+    font-family: var(--font-dharma);
+    font-weight: 800;
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .nearby-copy p:not(.eyebrow):not(.nearby-address) {
+    margin-top: 1.15rem;
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+    line-height: 1.45;
+  }
+  .nearby .btn {
+    margin-top: 1.5rem;
+  }
+  .nearby-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.35rem;
   }
   .countdown {
     position: relative;
@@ -1173,7 +1400,10 @@
     height: auto;
     aspect-ratio: 3 / 2;
   }
-  .attend-grid {
+  .attend-grid, .exhibit-grid, .reach-grid, .nearby-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-photos {
     grid-template-columns: 1fr;
   }
   .partner-row {
@@ -1272,5 +1502,36 @@
   .rise, .rise-img {
     opacity: 1;
     transform: none;
+  }
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
+    }
   }
 }
