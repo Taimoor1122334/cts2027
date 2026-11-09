@@ -389,7 +389,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(1rem, 1.7vw, 2rem);
+    gap: clamp(1rem, 1.55vw, 1.5rem);
   }
   .nav-link {
     display: inline-flex;
@@ -1076,6 +1076,25 @@
   }
   .track-item.is-open .track-chevron {
     transform: translateY(0.25rem) rotate(225deg);
+  }
+  .track-item.is-open .track-trigger {
+    border-bottom-color: transparent;
+  }
+  .track-panel {
+    display: none;
+    margin-top: -0.35rem;
+    padding: 0 0.15rem 1.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  }
+  .track-item.is-open .track-panel {
+    display: block;
+  }
+  .track-panel p {
+    max-width: 58rem;
+    margin: 0;
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
   }
   .experia {
     background: #1a1a1a;

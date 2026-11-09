@@ -159,10 +159,24 @@ if (countdown) {
   window.setInterval(tick, 1000);
 }
 
+const setTrackOpen = (item, open) => {
+  item.classList.toggle("is-open", open);
+  const button = item.querySelector(".track-trigger");
+  if (button) button.setAttribute("aria-expanded", open ? "true" : "false");
+};
+
 document.querySelectorAll(".track-trigger").forEach((button) => {
   button.addEventListener("click", () => {
     const item = button.closest(".track-item");
-    const open = item.classList.toggle("is-open");
-    button.setAttribute("aria-expanded", open ? "true" : "false");
+    setTrackOpen(item, !item.classList.contains("is-open"));
   });
 });
+
+const openTrackFromHash = () => {
+  if (!location.hash.startsWith("#track-")) return;
+  const item = document.getElementById(location.hash.slice(1));
+  if (item?.classList.contains("track-item")) setTrackOpen(item, true);
+};
+
+openTrackFromHash();
+window.addEventListener("hashchange", openTrackFromHash);

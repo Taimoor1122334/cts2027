@@ -46,14 +46,16 @@
                         </ul>
                     </li>
                     <li><a class="nav-link" href="index.html#experia">CTS at Experia</a></li>
+                    <li><a class="nav-link" href="exhibitor.html">Exhibitors</a></li>
                     <li class="has-dropdown">
-                        <a class="nav-link" href="exhibitor.html" aria-expanded="false" aria-haspopup="true">
-                            Exhibitors
+                        <button class="nav-link" type="button" aria-expanded="false" aria-haspopup="true">
+                            Attendees
                             <span class="chevron" aria-hidden="true"></span>
-                        </a>
+                        </button>
                         <ul class="dropdown">
-                            <li><a class="dropdown-link" href="exhibitor.html#exhibitors">Exhibitors at CTS</a></li>
-                            <li><a class="dropdown-link" href="exhibitor.html#reach">Who You&rsquo;ll Reach</a></li>
+                            <li><a class="dropdown-link" href="about.html#attend">Who Should Attend</a></li>
+                            <li><a class="dropdown-link" href="#">Schedule</a></li>
+                            <li><a class="dropdown-link" href="#">FAQs</a></li>
                         </ul>
                     </li>
                     <li class="has-dropdown">
@@ -65,6 +67,17 @@
                             <li><a class="dropdown-link" href="accomodations.html#venue">Conference Venue</a></li>
                             <li><a class="dropdown-link" href="accomodations.html#book">Book Your Room</a></li>
                             <li><a class="dropdown-link" href="accomodations.html#nearby">What&rsquo;s Nearby</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <button class="nav-link" type="button" aria-expanded="false" aria-haspopup="true">
+                            More
+                            <span class="chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="dropdown">
+                            <li><a class="dropdown-link" href="#">Sponsors</a></li>
+                            <li><a class="dropdown-link" href="#">News</a></li>
+                            <li><a class="dropdown-link" href="#">Contact</a></li>
                         </ul>
                     </li>
                     <li class="mobile-cta">
@@ -168,46 +181,67 @@
             <p class="tracks-intro rise">CTS offers engaging, insight-driven tracks designed to equip church leaders, creatives, and technology professionals with practical tools and innovative strategies. Covering topics from emerging technologies and digital innovation to leadership, media, and church operations, each track delivers actionable insights to help churches navigate an evolving digital landscape with confidence and excellence.</p>
             <div class="track-list">
                 <div class="track-item rise" id="track-administration">
-                    <button class="track-trigger" type="button" aria-expanded="false">
+                    <button class="track-trigger" type="button" aria-expanded="false" aria-controls="track-administration-panel">
                         <span>Church Administration &amp; Operations</span>
                         <span class="track-chevron" aria-hidden="true"></span>
                     </button>
+                    <div class="track-panel" id="track-administration-panel">
+                        <p>This track focuses on the systems that support ministry effectiveness&mdash;finance, HR, governance, compliance, and church management platforms. Attendees learn how to improve efficiency and stewardship through smart technology adoption.</p>
+                    </div>
                 </div>
                 <div class="track-item rise" id="track-creatives">
-                    <button class="track-trigger" type="button" aria-expanded="false">
+                    <button class="track-trigger" type="button" aria-expanded="false" aria-controls="track-creatives-panel">
                         <span>Creatives &amp; Communications</span>
                         <span class="track-chevron" aria-hidden="true"></span>
                     </button>
+                    <div class="track-panel" id="track-creatives-panel">
+                        <p>Designed for media and communications teams, this track explores digital storytelling, branding, livestreaming, social media, and content strategy. It also highlights how AI and emerging tools can amplify creativity and reach.</p>
+                    </div>
                 </div>
                 <div class="track-item rise" id="track-it">
-                    <button class="track-trigger" type="button" aria-expanded="false">
+                    <button class="track-trigger" type="button" aria-expanded="false" aria-controls="track-it-panel">
                         <span>IT, Cybersecurity &amp; Emerging Technology</span>
                         <span class="track-chevron" aria-hidden="true"></span>
                     </button>
+                    <div class="track-panel" id="track-it-panel">
+                        <p>This track equips IT leaders to build secure, scalable, and future-ready church technology environments. Topics include infrastructure, cybersecurity, cloud systems, data protection, and emerging tech trends impacting ministry.</p>
+                    </div>
                 </div>
                 <div class="track-item rise" id="track-leadership">
-                    <button class="track-trigger" type="button" aria-expanded="false">
+                    <button class="track-trigger" type="button" aria-expanded="false" aria-controls="track-leadership-panel">
                         <span>Executive Leadership &amp; Strategy</span>
                         <span class="track-chevron" aria-hidden="true"></span>
                     </button>
+                    <div class="track-panel" id="track-leadership-panel">
+                        <p>Focused on vision and governance, this track helps senior leaders navigate digital transformation, organizational change, and innovation. Sessions emphasize strategic leadership, alignment, and long-term sustainability.</p>
+                    </div>
                 </div>
                 <div class="track-item rise" id="track-production">
-                    <button class="track-trigger" type="button" aria-expanded="false">
+                    <button class="track-trigger" type="button" aria-expanded="false" aria-controls="track-production-panel">
                         <span>Production Engineering &amp; Experience Design</span>
                         <span class="track-chevron" aria-hidden="true"></span>
                     </button>
+                    <div class="track-panel" id="track-production-panel">
+                        <p>This track dives into the technical side of immersive worship and events&mdash;audio, lighting, video, LED walls, and experience orchestration. Attendees learn how to design environments that enhance engagement and encounter.</p>
+                    </div>
                 </div>
                 <div class="track-item rise" id="track-worship">
-                    <button class="track-trigger" type="button" aria-expanded="false">
+                    <button class="track-trigger" type="button" aria-expanded="false" aria-controls="track-worship-panel">
                         <span>Worship Technology &amp; Experience</span>
                         <span class="track-chevron" aria-hidden="true"></span>
                     </button>
+                    <div class="track-panel" id="track-worship-panel">
+                        <p>Built for worship leaders and tech teams, this track covers worship systems, rehearsal workflows, technology integration, and tools that support excellence without distraction&mdash;keeping worship authentic and Spirit-led.</p>
+                    </div>
                 </div>
                 <div class="track-item rise" id="track-nextgen">
-                    <button class="track-trigger" type="button" aria-expanded="false">
+                    <button class="track-trigger" type="button" aria-expanded="false" aria-controls="track-nextgen-panel">
                         <span>NextGen &amp; Digital Discipleship</span>
                         <span class="track-chevron" aria-hidden="true"></span>
                     </button>
+                    <div class="track-panel" id="track-nextgen-panel">
+                        <p>Focused on engaging Gen Z and Gen Alpha, this track equips youth pastors and leaders to disciple digital natives. Topics include online culture, social media, gaming, AI awareness, mental health, and building future-ready youth ministries.</p>
+                    </div>
                 </div>
             </div>
         </div>
