@@ -354,7 +354,7 @@
     top: calc(100% + 1.55rem);
     left: -0.85rem;
     z-index: 5;
-    min-width: 11.5rem;
+    min-width: 17.5rem;
     margin: 0;
     padding: 0.7rem 0;
     list-style: none;
@@ -391,6 +391,7 @@
   .dropdown-link {
     display: block;
     padding: 0.48rem 1.15rem;
+    white-space: nowrap;
     color: #fff;
     font-family: var(--font-proxima);
     font-weight: 400;
@@ -475,7 +476,7 @@
     inset: 0;
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.1) 42%, rgba(0, 0, 0, 0) 72%),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.04) 28%, rgba(18, 18, 18, 0.28) 52%, rgba(22, 22, 22, 0.78) 74%, #1a1a1a 92%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.04) 28%, rgba(18, 18, 18, 0.28) 52%, rgba(22, 22, 22, 0.78) 74%, #0a0a0a 92%);
   }
 
   .hero-content {
@@ -512,7 +513,7 @@
   .hero-about .hero-overlay {
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.28) 36%, rgba(0, 0, 0, 0.05) 62%, rgba(0, 0, 0, 0.18) 100%),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.08) 28%, rgba(0, 0, 0, 0.12) 72%, #1a1a1a 100%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.08) 28%, rgba(0, 0, 0, 0.12) 72%, #0a0a0a 100%);
   }
 
   .hero-about .hero-content {
@@ -520,7 +521,7 @@
   }
 
   .purpose {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-top: clamp(2.5rem, 4vw, 3.75rem);
     padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
   }
@@ -584,7 +585,7 @@
   }
 
   .attend {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
   }
 
@@ -654,7 +655,7 @@
   }
 
   .exhibit {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-top: clamp(2.5rem, 4vw, 3.75rem);
     padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
   }
@@ -675,6 +676,81 @@
   .exhibit-intro {
     margin-top: 1.35rem;
     max-width: 78rem;
+  }
+
+  #about .exhibit-intro {
+    max-width: none;
+  }
+
+  #about .exhibit-grid {
+    align-items: start;
+    gap: clamp(1.35rem, 2vw, 1.85rem);
+  }
+
+  #about .exhibit-copy .eyebrow + h2 {
+    margin-top: 0.85rem;
+  }
+
+  #about .exhibit-copy p:not(.eyebrow) {
+    margin-top: 0.85rem;
+    line-height: 1.4;
+  }
+
+  #about .exhibit-actions {
+    margin-top: 1.15rem;
+  }
+
+  #about .exhibit-media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.55 / 1;
+    object-fit: cover;
+    object-position: right center;
+    border-radius: 1.5rem;
+  }
+
+  #about .membership {
+    margin-top: clamp(3.5rem, 6vw, 5.5rem);
+  }
+
+  #about .membership h2 {
+    margin-top: 0.7rem;
+  }
+
+  #about .commit {
+    margin-top: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  #about .commit h2,
+  #about .benefits h2 {
+    margin-top: 0;
+  }
+
+  #about .benefits,
+  #about .conference {
+    margin-top: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  #about .conference {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+    gap: clamp(1.5rem, 2.4vw, 2.25rem);
+  }
+
+  #about .conference h2 {
+    font-size: clamp(3.15rem, 4.5vw, 4.6rem);
+    line-height: 0.86;
+  }
+
+  #about .conference .exhibit-copy p:not(.eyebrow) {
+    margin-top: 1.35rem;
+    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+    line-height: 1.45;
+  }
+
+  #about .conference .exhibit-media img {
+    aspect-ratio: 1.81 / 1;
+    object-position: center 42%;
   }
 
   .exhibit-intro p {
@@ -701,6 +777,16 @@
   .exhibit-copy h2 {
     margin-top: 0;
     font-size: clamp(3.15rem, 4.6vw, 4.75rem);
+  }
+
+  .exhibit-copy .eyebrow + h2 {
+    margin-top: 0.7rem;
+  }
+
+  .exhibit-copy p:not(.eyebrow) {
+    margin-top: 1.15rem;
+    font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+    line-height: 1.5;
   }
 
   .exhibit-media img {
@@ -746,8 +832,70 @@
     margin-top: 1.65rem;
   }
 
+  #about.exhibit {
+    padding-bottom: 0;
+  }
+
+  .mission {
+    background: #0a0a0a;
+    padding-top: clamp(3rem, 5vw, 4.5rem);
+    padding-bottom: clamp(8rem, 14vw, 12rem);
+  }
+
+  .mission h2 {
+    margin: 0;
+    font-size: clamp(3rem, 5vw, 4.75rem);
+    line-height: 0.9;
+  }
+
+  .mission p {
+    margin-top: 1.35rem;
+    font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+    line-height: 1.5;
+  }
+
+  .mission-list {
+    margin: 1.35rem 0 0;
+    padding-left: 1.35rem;
+    list-style: disc;
+  }
+
+  .mission-list li {
+    font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+    line-height: 1.5;
+  }
+
+  .mission-list li + li {
+    margin-top: 0.55rem;
+  }
+
+  .mission-list strong {
+    font-weight: 700;
+  }
+
+  .mission > .page-wrap > .btn {
+    margin-top: 1.65rem;
+  }
+
+  .mission-close {
+    margin-top: clamp(4.5rem, 8vw, 6.5rem);
+    text-align: center;
+  }
+
+  .mission-close p {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  .mission-mail {
+    margin-top: 1.85rem;
+    padding: 1.05rem 1.85rem;
+    border-radius: 0.8rem;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+  }
+
   .reach {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
   }
 
@@ -778,7 +926,7 @@
   }
 
   .venue {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-top: clamp(2.5rem, 4vw, 3.75rem);
     padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
   }
@@ -814,7 +962,7 @@
   }
 
   .booking {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
   }
 
@@ -861,7 +1009,7 @@
   }
 
   .nearby {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-bottom: clamp(4.25rem, 7vw, 6.25rem);
   }
 
@@ -1015,7 +1163,7 @@
 
   /* About */
   .about {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-top: clamp(6.5rem, 9vw, 8rem);
     padding-bottom: clamp(4.5rem, 8vw, 6.75rem);
   }
@@ -1070,7 +1218,7 @@
 
   /* Tracks */
   .tracks {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-block: clamp(4.5rem, 8vw, 6.75rem);
   }
 
@@ -1158,7 +1306,7 @@
 
   /* Experia */
   .experia {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-block: clamp(3.25rem, 5.5vw, 4.75rem);
   }
 
@@ -1201,7 +1349,7 @@
 
   /* Past partners */
   .partners {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-block: clamp(3.75rem, 6vw, 5.75rem);
   }
 
@@ -1250,7 +1398,7 @@
 
   /* Footer */
   .site-footer {
-    background: #1a1a1a;
+    background: #0a0a0a;
     padding-block: clamp(4rem, 7vw, 6.25rem);
   }
 
@@ -1551,6 +1699,15 @@
   .reach-grid,
   .nearby-grid {
     grid-template-columns: 1fr;
+  }
+
+  #about .conference {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  #about .exhibit-media img {
+    aspect-ratio: 1.55 / 1;
   }
 
   .booking-photos {
